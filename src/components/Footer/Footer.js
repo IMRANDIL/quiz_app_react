@@ -5,7 +5,9 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div>Footer</div>
+        <div>
+            Made with Love <span role='img' aria-label='love'>💝</span> by IMRANDIL
+        </div>
     )
 }
 
