@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -13,12 +13,20 @@ import Result from './Pages/Result/Result'
 
 
 function App() {
+
+  const [name, setName] = useState('');
+
+
+  const fetchQuestions = () => {
+
+  }
+
   return (
     <BrowserRouter>
       <div className="App" style={{ backgroundImage: 'url(./ques1.png)' }}>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home name={name} setName={setName} fetchQuestions={fetchQuestions} />} />
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/result' element={<Result />} />
         </Routes>
