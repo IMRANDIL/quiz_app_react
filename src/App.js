@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import {
   BrowserRouter,
@@ -17,9 +18,12 @@ function App() {
   const [name, setName] = useState('');
 
 
-  const fetchQuestions = () => {
-
+  const fetchQuestions = async (category, difficulty) => {
+    const data = await axios.get(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
+    console.log(data);
   }
+
+
 
   return (
     <BrowserRouter>
