@@ -22,7 +22,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
 
     }, [questions, currentQuest]);
 
-    console.log(options);
+
 
 
 
