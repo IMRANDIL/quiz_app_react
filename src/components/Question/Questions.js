@@ -27,6 +27,12 @@ const Questions = ({ score, questions, setQuestions, setScore, options, correct,
 
 
 
+    const handleCheck = (i) => {
+        setSelected(i);
+        if (i === correct) setScore(score + 1);
+        setError(false)
+    }
+
 
 
     return (
@@ -42,7 +48,7 @@ const Questions = ({ score, questions, setQuestions, setScore, options, correct,
                         options &&
                         options.map((i, index) => {
                             return (
-                                <button key={index} onClick={() => { }}
+                                <button key={index} onClick={() => handleCheck(i)}
 
                                     className={`singleOption ${selected && handleSelect(i)}`}
                                     disabled={selected}
