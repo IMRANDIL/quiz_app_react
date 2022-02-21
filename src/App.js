@@ -33,7 +33,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Home name={name} setName={setName} fetchQuestions={fetchQuestions} />} />
-          <Route path='/quiz' element={<Quiz name={name} questions={questions} score={score} setScore={setScore} />} />
+          <Route path='/quiz' element={<Quiz name={name} questions={questions} score={score} setScore={setScore} setQuestions={setQuestions} />} />
           <Route path='/result' element={<Result />} />
         </Routes>
       </div>
