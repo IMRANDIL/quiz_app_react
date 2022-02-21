@@ -16,7 +16,7 @@ import Result from './Pages/Result/Result'
 function App() {
 
   const [name, setName] = useState('');
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState();
   const [score, setScore] = useState(0)
 
 
