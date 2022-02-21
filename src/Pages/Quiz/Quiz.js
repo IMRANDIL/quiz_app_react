@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
+import { CircularProgress } from '@mui/material';
 
+import './Quiz.css'
 
 
 
@@ -36,6 +38,13 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
             <span className='subtitle'>
                 Welcome, {name}
             </span>
+            {
+                questions ? (
+                    <>Questions</>
+                ) : (
+                    <CircularProgress style={{ margin: 100, color: 'inherit' }} size={150} thickness={1} />
+                )
+            }
         </div>
     )
 }
