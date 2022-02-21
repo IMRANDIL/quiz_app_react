@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Quiz = () => {
+
+
+
+
+const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
+
+
+    const [options, setOptions] = useState('');
+    const [currentQuest, setCurrentQuest] = useState(0)
+
+
+
+    useEffect(() => {
+
+        setOptions(questions && handleShuffle([questions[currentQuest]?.correct_answer, ...questions[currentQuest]?.incorrect_answer]))
+
+
+    }, [questions])
+
+
     return (
-        <div>Quiz</div>
+        <div>
+
+        </div>
     )
 }
 
