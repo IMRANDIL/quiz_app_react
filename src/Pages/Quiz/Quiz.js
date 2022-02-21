@@ -34,13 +34,18 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
 
 
     return (
-        <div>
+        <div className='quiz'>
             <span className='subtitle'>
                 Welcome, {name}
             </span>
             {
                 questions ? (
-                    <>Questions</>
+                    <>
+                        <div className="quizInfo">
+                            <span>{questions[currentQuest].category}</span>
+                            <span>Score : {score}</span>
+                        </div>
+                    </>
                 ) : (
                     <CircularProgress style={{ margin: 100, color: 'inherit' }} size={150} thickness={1} />
                 )
