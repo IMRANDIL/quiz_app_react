@@ -36,7 +36,7 @@ const Questions = ({ score, questions, setQuestions, setScore, options, correct,
 
 
     return (
-        <div>
+        <div className='question'>
             <h1>Question {currentQuest + 1}</h1>
 
             <div className="singleQuestion">
