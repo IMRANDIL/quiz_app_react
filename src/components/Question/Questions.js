@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import './Questions.css'
@@ -9,7 +10,8 @@ import './Questions.css'
 
 
 
-const Questions = ({ score, questions, setQuestions, setScore, options, correct, currentQuest, setCurrentQuest }) => {
+const Questions = ({ score, questions, setScore, options, correct, currentQuest, setCurrentQuest }) => {
+    const navigate = useNavigate();
 
     const [selected, setSelected] = useState();
     const [error, setError] = useState(false);
@@ -33,6 +35,31 @@ const Questions = ({ score, questions, setQuestions, setScore, options, correct,
         if (i === correct) setScore(score + 1);
         setError(false)
     }
+
+
+
+
+
+
+    const handleQuit = () => {
+
+    }
+
+
+
+    const handleNext = () => {
+        if (currentQuest > 8) {
+            navigate('/result')
+        } else if (selected) {
+            setCurrentQuest(currentQuest + 1);
+            setSelected()
+        } else {
+            setError('Please Select An Option First')
+        }
+    }
+
+
+
 
 
 
@@ -62,8 +89,8 @@ const Questions = ({ score, questions, setQuestions, setScore, options, correct,
                     }
                 </div>
                 <div className="controls">
-                    <Button variant='contained' color='secondary' size='large' style={{ width: 185 }} href='/'>Quit</Button>
-                    <Button variant='contained' color='primary' size='large' style={{ width: 185 }}>Next Question</Button>
+                    <Button variant='contained' color='secondary' size='large' style={{ width: 185 }} href='/' onClick={handleQuit}>Quit</Button>
+                    <Button variant='contained' color='primary' size='large' style={{ width: 185 }} onClick={handleNext}>Next Question</Button>
                 </div>
             </div>
         </div>
