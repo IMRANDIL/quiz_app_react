@@ -17,7 +17,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
         setOptions(questions && handleShuffle([questions[currentQuest]?.correct_answer, ...questions[currentQuest]?.incorrect_answer]))
 
 
-    }, [questions]);
+    }, [questions, currentQuest]);
 
 
 
