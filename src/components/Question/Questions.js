@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
@@ -59,6 +60,10 @@ const Questions = ({ score, questions, setQuestions, setScore, options, correct,
 
                         })
                     }
+                </div>
+                <div className="controls">
+                    <Button variant='contained' color='secondary' size='large' style={{ width: 185 }} href='/'>Quit</Button>
+                    <Button variant='contained' color='primary' size='large' style={{ width: 185 }}>Next Question</Button>
                 </div>
             </div>
         </div>
